@@ -1,18 +1,3 @@
-"""
-voy a crear una aplicacion que me permita fijar desde la interfaz
-los siguientes datos del modelo.
-
--La temperatura
--La instrucion del Template
-
-Mas adelante me permitirá fijar:
--El tipo de memoria
-    -dependiendo de si escoge un tipo de memoria que elija los 
-    parametros de esa memoria, por ejemplo el numero de mensajes
-    que quiere guardar.
-
-"""
-
 import streamlit as st
 from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
@@ -20,6 +5,7 @@ from langchain.chains import LLMChain
 
 
 st.title("Custom LLM")
+st.text("Observa como afectan los parametros que configuras en el llm")
 
 openai_api_key = st.sidebar.text_input("Coloca tu Api de OpenAI")
 model_name = st.sidebar.selectbox("Large Language Model", ["text-davinci-003", "gpt-3.5-turbo"])
