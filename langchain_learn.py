@@ -1,18 +1,3 @@
-"""
-voy a crear una aplicacion que me permita fijar desde la interfaz
-los siguientes datos del modelo.
-
--La temperatura
--La instrucion del Template
-
-Mas adelante me permitirá fijar:
--El tipo de memoria
-    -dependiendo de si escoge un tipo de memoria que elija los 
-    parametros de esa memoria, por ejemplo el numero de mensajes
-    que quiere guardar.
-
-"""
-
 import streamlit as st
 from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
@@ -39,7 +24,6 @@ def response(user_text):
        template = instructions + "  {input}. Asistente: "
     )
 
-    #final_promp = prompt.format(input=user_text)
     chain = LLMChain(
         llm=llm, 
         prompt=prompt,
