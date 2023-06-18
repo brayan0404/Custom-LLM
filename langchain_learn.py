@@ -8,8 +8,6 @@ st.title("Custom LLM")
 st.text("Observa como afectan los parametros que configuras en el llm")
 
 openai_api_key = st.sidebar.text_input("Coloca tu Api de OpenAI")
-if not openai_api_key:
-    st.sidebar.warning("Coloca tu clave de OpenAI")
 
 model_name = st.sidebar.selectbox("Large Language Model", ["text-davinci-003", "gpt-3.5-turbo"])
 temperature = st.sidebar.slider("Elige la temperature", 0.0,1.0)
@@ -36,5 +34,8 @@ def response(user_text):
     
 with st.form("forms"):
     user_input = st.text_input("En que te puedo ayudar", )
-    if st.form_submit_button("Enviar"):
-        response(user_input)
+    if openai_api_key:
+        if st.form_submit_button("Enviar"):
+            response(user_input)
+    else:
+    st.sidebar.warning("Coloca tu clave de OpenAI")
