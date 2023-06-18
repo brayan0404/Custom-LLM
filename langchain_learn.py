@@ -38,4 +38,4 @@ with st.form("forms"):
         if st.form_submit_button("Enviar"):
             response(user_input)
     else:
-    st.sidebar.warning("Coloca tu clave de OpenAI")
+        st.warning("Coloca tu clave de OpenAI")
