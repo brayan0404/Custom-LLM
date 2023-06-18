@@ -34,8 +34,8 @@ def response(user_text):
     
 with st.form("forms"):
     user_input = st.text_input("En que te puedo ayudar", )
-    if openai_api_key:
-        if st.form_submit_button("Enviar"):
-            response(user_input)
+    if openai_api_key and st.form_submit_button("Enviar"):
+        response(user_input)
     else:
-        st.warning("Coloca tu clave de OpenAI")
+        st.warning("Coloca tu clave de OpenAI API Key")
+ 
